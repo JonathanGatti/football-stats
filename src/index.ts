@@ -1,13 +1,8 @@
 import { CsvFileReader } from './CsvFileReader';
+import { MatchResult } from './MatchResult';
 
-const matches = new CsvFileReader('football.csv');
-matches.read();
-
-enum MatchResult {
-  HomeWin = 'H',
-  AwayWin = 'A',
-  Draw = 'D'
-}
+const reader = new CsvFileReader('football.csv');
+reader.read();
 
 const calculateWins = (teamName: string, matches: string[][]): void => {
   let wins = 0;
@@ -18,5 +13,5 @@ const calculateWins = (teamName: string, matches: string[][]): void => {
   console.log(`${teamName} wins: ${wins}`)
 }
 
-calculateWins('Cardiff', matches.data)
+calculateWins('Cardiff', reader.data)
 
