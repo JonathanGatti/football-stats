@@ -1,8 +1,15 @@
-import { MatchReader, MatchData } from './MatchReader';
+import { MatchReader } from './MatchReader';
+import { MatchData } from './MatchData';
+import { CsvFileReader } from './CsvFileReader';
 import { MatchResult } from './MatchResult';
 
-const reader = new MatchReader('football.csv');
-reader.read();
+// const reader = new MatchReader('football.csv');
+// reader.read();
+
+const csvFileReader = new CsvFileReader('football.csv');
+const matchReader = new MatchReader(csvFileReader)
+matchReader.load()
+
 
 const calculateWins = (teamName: string, matches: MatchData[]): void => {
   let wins = 0;
@@ -13,5 +20,5 @@ const calculateWins = (teamName: string, matches: MatchData[]): void => {
   console.log(`${teamName} wins: ${wins}`)
 }
 
-calculateWins('Arsenal', reader.data)
+calculateWins('Arsenal', matchReader.matches)
 
