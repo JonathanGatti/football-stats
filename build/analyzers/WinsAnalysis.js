@@ -16,7 +16,7 @@ var WinsAnalysis = /** @class */ (function () {
             else if (match[2] === this.teamName && match[5] === MatchResult_1.MatchResult.AwayWin)
                 wins++;
         }
-        return this.teamName + " wins: " + wins;
+        return "Team " + this.teamName + " won: " + wins + " games";
     };
     return WinsAnalysis;
 }());
