@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-var CsvFileReader_1 = require("./CsvFileReader");
+var MatchReader_1 = require("./MatchReader");
 var MatchResult_1 = require("./MatchResult");
-var reader = new CsvFileReader_1.CsvFileReader('football.csv');
+var reader = new MatchReader_1.MatchReader('football.csv');
 reader.read();
 var calculateWins = function (teamName, matches) {
     var wins = 0;
@@ -15,4 +15,4 @@ var calculateWins = function (teamName, matches) {
     }
     console.log(teamName + " wins: " + wins);
 };
-calculateWins('Cardiff', reader.data);
+calculateWins('Arsenal', reader.data);
